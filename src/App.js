@@ -1,9 +1,11 @@
 import './App.css';
+import { IssueBoard } from './features/issues'
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <h1>Issue Tracker Module</h1>
+      <IssueBoard />
     </div>
   );
 }
