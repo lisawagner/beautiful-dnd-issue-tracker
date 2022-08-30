@@ -1,5 +1,5 @@
 # Issue Tracker | React Beautiful DnD
-> A Simple Issue Tracker for Devs
+> A simple issue tracker test project
 
 <!-- [![Netlify][netlify-img]][netlify-url] -->
 [![GitHub repo size][github-img]][github-url]
@@ -7,22 +7,20 @@
 
 <!-- Badges to Add: Netlify build, twitter, license? -->
 
-_Featuring drag and drop capabilities, this issue tracker provides the user with a simple way to create, view, update and organize code issues._
+_Featuring drag and drop capabilities, this issue tracker provides the user with a simple way to view and organize code issues._
 
-### [Application Snapshot]()
-<!-- <p align="center">
-  <img src="src/assets/rtk-todoodles.png" alt="Redux Toolkit with TailwindCSS Todo App" width="700">
-</p> -->
+<p align="center">
+  <img src="src/assets/issue-board.png" alt="Issue Board UI" width="700">
+</p>
 
 </br>
 
 ## Features
 
 _Users can have fun moving their issues and tasks around. This app features:_
-- DragDropContext, Droppable
-- Tasks, Columns and ColumnOrder
-- Supports **mouse** and **touch** events
-- Support for device tilting (**gyroscope**)
+- Ability to drag columns into a new order
+- Ability to move task to different columns
+- Ability to re-order tasks in a column
 
 ### [Demo](https://friendly-redux-shopping-cart.netlify.app/)
 
@@ -52,14 +50,6 @@ An alternate package was recently released based on a fork of react-beautiful-dn
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-The things you need before installing the software.
-
-* You need this
-* And you need this
-* Oh, and don't forget this
-
 ### Installation
 
 _Easily set up a local development environment_
@@ -72,19 +62,16 @@ _Easily set up a local development environment_
 
 ## Usage
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Simply click and drag an issue from one column to the next. Changing the task order within columns is super easy too!
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+<p align="center">
+  <img src="src/assets/task-actions-gif.gif" alt="animated image of tasks being moved" width="500">
+</p>
+
+</br>
+
 
 ## Deployment
-
-Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
-
-### Server
-
-* Live:
-* Release:
-* Development:
 
 This project is hosted on Netlify. To deploy your own copy, you will need to set up a Netlify account. Netlify offers a generous free tier to developers.
 
@@ -107,9 +94,9 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [https://github.com/yourname/github-link](https://github.com/dbader/)
 
 
-## Additional Documentation and Acknowledgments
+## Acknowledgments
 
-* Project folder on server:
+* [Beautiful & Accessible Drag and Drop with react-beautiful-dnd][tutorial-url] - by Alex Reardon
 * Confluence link:
 * Asana board:
 * etc...
@@ -140,3 +127,5 @@ Nanoid is now part of React Toolkit, so you do not have to add a separate packag
 
 [netlify-img]: https://img.shields.io/netlify/8f53362b-5385-445d-bff8-fbf44086fa13?style=flat-square
 [netlify-url]: https://todoodles-redux-toolkit-tailwind-app.netlify.app/
+
+[tutorial-url]: https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd
