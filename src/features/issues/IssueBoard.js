@@ -82,7 +82,11 @@ const IssueBoard = () => {
   }
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId='all-columns' direction='horizontal' type='column'>
+      <Droppable
+        droppableId='all-columns'
+        direction='horizontal'
+        type='column'
+      >
         {(provided) => (
           <div
             {...provided.droppableProps}
@@ -97,7 +101,14 @@ const IssueBoard = () => {
                 const column = data.columns[id]
                 const tasks = column.taskIds.map(taskId => data.tasks[taskId])
 
-                return <Column key={column.id} column={column} tasks={tasks} index={index} />
+                return (
+                  <Column
+                    key={column.id}
+                    column={column}
+                    tasks={tasks}
+                    index={index}
+                  />
+                )
               })}
             </div>
           </div>
