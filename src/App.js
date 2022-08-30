@@ -1,4 +1,4 @@
-import './App.css';
+
 import { IssueBoard } from './features/issues'
 
 function App() {
