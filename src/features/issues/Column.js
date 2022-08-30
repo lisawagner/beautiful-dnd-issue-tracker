@@ -7,7 +7,7 @@ const Column = (props) => {
     <Draggable draggableId={props.column.id} index={props.index}>
       {(provided) => (
         <div
-          className="colContainer flex flex-col items-center justify-start"
+          className="card colContainer flex flex-col gap-2 items-center justify-start"
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
@@ -18,12 +18,11 @@ const Column = (props) => {
             {props.column.title}
           </div>
           <Droppable droppableId={props.column.id} type='task'>
-            {(provided, snapshot) => (
+            {(provided) => (
               <div
-                className="taskList"
+                className="flex flex-col gap-2 w-full"
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                // isDraggingOver={snapshot.isDraggingOver}
               >
                 {props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
                 {provided.placeholder}

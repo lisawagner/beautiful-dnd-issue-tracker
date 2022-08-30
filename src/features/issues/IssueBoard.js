@@ -62,15 +62,19 @@ const IssueBoard = () => {
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center gap-3"
           >
             <h1>Issue Board</h1>
-            {data.columnOrder.map((id, index) => {
-              const column = data.columns[id]
-              const tasks = column.taskIds.map(taskId => data.tasks[taskId])
+            <div 
+              className='grid grid-cols-1 gap-4 w-full md:w-1/2 lg:w-full lg:grid-cols-4'
+            >
+              {data.columnOrder.map((id, index) => {
+                const column = data.columns[id]
+                const tasks = column.taskIds.map(taskId => data.tasks[taskId])
 
-              return <Column key={column.id} column={column} tasks={tasks} index={index} />
-            })} 
+                return <Column key={column.id} column={column} tasks={tasks} index={index} />
+              })}
+            </div>
           </div>
         )}
       </Droppable>
