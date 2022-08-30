@@ -1,12 +1,15 @@
-
+import { Routes, Route } from 'react-router-dom'
 import { IssueBoard } from './features/issues'
+import { Layout } from './components'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Issue Tracker Module</h1>
-      <IssueBoard />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IssueBoard />} />
+      </Route>
+      
+    </Routes>
   );
 }
 
