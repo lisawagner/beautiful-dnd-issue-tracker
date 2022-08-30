@@ -89,7 +89,7 @@ const IssueBoard = () => {
             ref={provided.innerRef}
             className="flex flex-col items-center justify-center gap-3"
           >
-            <h1>Issue Board</h1>
+            <h1 className='font-bold text-3xl mb-4'>Issue Board</h1>
             <div 
               className='grid grid-cols-1 gap-4 w-full md:w-1/2 lg:w-full lg:grid-cols-4'
             >
