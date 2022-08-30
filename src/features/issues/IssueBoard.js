@@ -11,48 +11,73 @@ const IssueBoard = () => {
 
   const onDragEnd = result => {
     const { destination, source, draggableId, type } = result;
-    //If there is no destination
+    //If no destination, don't change anything
     if (!destination) { return }
 
-    //If source and destination is the same
+    //If source & destination same, don't change anything
     if (destination.droppableId === source.droppableId && destination.index === source.index) { return }
 
-    //If you're dragging columns
+    //If moving columns, set newState for the column order
     if (type === 'column') {
-      const newColumnOrder = Array.from(data.columnOrder);
-      newColumnOrder.splice(source.index, 1);
-      newColumnOrder.splice(destination.index, 0, draggableId);
+      const currentColumnOrder = Array.from(data.columnOrder);
+      currentColumnOrder.splice(source.index, 1);
+      currentColumnOrder.splice(destination.index, 0, draggableId);
       const newState = {
         ...data,
-        columnOrder: newColumnOrder
+        columnOrder: currentColumnOrder
       }
       setData(newState)
       return;
     }
 
-    //Anything below this happens if you're dragging tasks
+    // Dragging tasks
     const start = data.columns[source.droppableId];
     const finish = data.columns[destination.droppableId];
 
     //If dropped inside the same column
     if (start === finish) {
-      const newTaskIds = Array.from(start.taskIds);
-      newTaskIds.splice(source.index, 1);
-      newTaskIds.splice(destination.index, 0, draggableId);
-      const newColumn = {
+      const newTaskOrder = Array.from(start.taskIds);
+      newTaskOrder.splice(source.index, 1);
+      newTaskOrder.splice(destination.index, 0, draggableId);
+      const setTaskOrder = {
         ...start,
-        taskIds: newTaskIds
+        taskIds: newTaskOrder
       }
       const newState = {
         ...data,
         columns: {
           ...data.columns,
-          [newColumn.id]: newColumn
+          [setTaskOrder.id]: setTaskOrder
         }
       }
       setData(newState)
       return;
     }
+    //If dropped in a different column
+    const initialTaskOrder = Array.from(start.taskIds);
+    initialTaskOrder.splice(source.index, 1);
+    const setNewTaskOrder = {
+      ...start,
+      taskIds: initialTaskOrder
+    }
+
+    const finalTaskOrder = Array.from(finish.taskIds);
+    finalTaskOrder.splice(destination.index, 0, draggableId);
+    const setFinalTaskOrder = {
+      ...finish,
+      taskIds: finalTaskOrder
+    }
+
+    const newState = {
+      ...data,
+      columns: {
+        ...data.columns,
+        [setNewTaskOrder.id]: setNewTaskOrder,
+        [setFinalTaskOrder.id]: setFinalTaskOrder
+      }
+    }
+
+    setData(newState)
 
   }
   return (
