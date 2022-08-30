@@ -7,10 +7,10 @@ import { DragDropContext, Droppable } from '@hello-pangea/dnd'
 const IssueBoard = () => {
   const [data, setData] = useState(initialData)
 
-  console.log(data);
+  console.log(data)
 
   const onDragEnd = result => {
-    const { destination, source, draggableId, type } = result;
+    const { destination, source, draggableId, type } = result
     //If no destination, don't change anything
     if (!destination) { return }
 
@@ -19,26 +19,26 @@ const IssueBoard = () => {
 
     //If moving columns, set newState for the column order
     if (type === 'column') {
-      const currentColumnOrder = Array.from(data.columnOrder);
-      currentColumnOrder.splice(source.index, 1);
-      currentColumnOrder.splice(destination.index, 0, draggableId);
+      const currentColumnOrder = Array.from(data.columnOrder)
+      currentColumnOrder.splice(source.index, 1)
+      currentColumnOrder.splice(destination.index, 0, draggableId)
       const newState = {
         ...data,
         columnOrder: currentColumnOrder
       }
       setData(newState)
-      return;
+      return
     }
 
     // Dragging tasks
-    const start = data.columns[source.droppableId];
-    const finish = data.columns[destination.droppableId];
+    const start = data.columns[source.droppableId]
+    const finish = data.columns[destination.droppableId]
 
-    //If dropped inside the same column
+    //If task dropped in same column
     if (start === finish) {
-      const newTaskOrder = Array.from(start.taskIds);
-      newTaskOrder.splice(source.index, 1);
-      newTaskOrder.splice(destination.index, 0, draggableId);
+      const newTaskOrder = Array.from(start.taskIds)
+      newTaskOrder.splice(source.index, 1)
+      newTaskOrder.splice(destination.index, 0, draggableId)
       const setTaskOrder = {
         ...start,
         taskIds: newTaskOrder
@@ -51,18 +51,18 @@ const IssueBoard = () => {
         }
       }
       setData(newState)
-      return;
+      return
     }
-    //If dropped in a different column
-    const initialTaskOrder = Array.from(start.taskIds);
-    initialTaskOrder.splice(source.index, 1);
+    //If task dropped in different column
+    const initialTaskOrder = Array.from(start.taskIds)
+    initialTaskOrder.splice(source.index, 1)
     const setNewTaskOrder = {
       ...start,
       taskIds: initialTaskOrder
     }
 
-    const finalTaskOrder = Array.from(finish.taskIds);
-    finalTaskOrder.splice(destination.index, 0, draggableId);
+    const finalTaskOrder = Array.from(finish.taskIds)
+    finalTaskOrder.splice(destination.index, 0, draggableId)
     const setFinalTaskOrder = {
       ...finish,
       taskIds: finalTaskOrder

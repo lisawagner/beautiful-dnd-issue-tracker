@@ -1,3 +1,3 @@
-import IssueBoard from "./IssueBoard";
+import IssueBoard from "./IssueBoard"
 
 export { IssueBoard }
