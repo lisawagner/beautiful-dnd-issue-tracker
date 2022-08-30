@@ -9,6 +9,17 @@ const IssueBoard = () => {
 
   console.log(data)
 
+  const onDragStart = (start, provided) => {
+    provided.announce(`You have lifted the task in position ${start.source.index + 1}`,)
+  }
+
+  const onDragUpdate = (update, provided) => {
+    const message = update.description
+      ? `You moved the task to ${update.destination.index + 1}`
+      : `Press space bar to release task item`
+    provided.announce(message)
+  }
+
   const onDragEnd = result => {
     const { destination, source, draggableId, type } = result
     //If no destination, don't change anything
@@ -81,7 +92,11 @@ const IssueBoard = () => {
 
   }
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
+    <DragDropContext
+      onDragStart={onDragStart}
+      onDragUpdate={onDragUpdate}
+      onDragEnd={onDragEnd}
+    >
       <Droppable
         droppableId='all-columns'
         direction='horizontal'

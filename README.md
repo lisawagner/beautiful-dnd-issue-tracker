@@ -21,6 +21,7 @@ _Users can have fun moving their issues and tasks around. This app features:_
 - Ability to drag columns into a new order
 - Ability to move task to different columns
 - Ability to re-order tasks in a column
+- Accessibility: Custom screen reader logic added (requires screen reader software turned on to use/test)
 
 ### [Demo](https://friendly-redux-shopping-cart.netlify.app/)
 
@@ -70,7 +71,12 @@ Simply click and drag an issue from one column to the next. Changing the task or
 
 </br>
 
+To use or test the accessibility implementation, please turn on systems screenreader:
 
+Windows 10
+   - Go to Settings :gear: > Ease of Access > Narrator, and then turn on the toggle under Use Narrator.
+   - IMPORTANT: Press capslock and spacebar keys to turn on/off scan mode. If the screen reader is in scan mode, you will not be able to navigate the page with your keyboard as intended.
+   
 ## Deployment
 
 This project is hosted on Netlify. To deploy your own copy, you will need to set up a Netlify account. Netlify offers a generous free tier to developers.
