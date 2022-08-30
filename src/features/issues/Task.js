@@ -1,6 +1,8 @@
 import { Draggable } from '@hello-pangea/dnd'
 
 const Task = (props) => {
+  // console.log('New rendering...')
+  
   return (
     <Draggable draggableId={props.task.id} index={props.index}>
       

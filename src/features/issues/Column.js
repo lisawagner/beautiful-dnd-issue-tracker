@@ -1,5 +1,5 @@
 import { Draggable, Droppable } from '@hello-pangea/dnd'
-import Task from "./Task"
+import TaskList from './TaskList'
 
 const Column = (props) => {
 
@@ -26,7 +26,7 @@ const Column = (props) => {
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
-                  {props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
+                  <TaskList tasks={props.tasks} />
                   {provided.placeholder}
                 </div>
               )}
