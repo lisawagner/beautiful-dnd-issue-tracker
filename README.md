@@ -1,4 +1,4 @@
-# Issue Tracker | React Beautiful DnD
+# DropTrak Issue Tracker | React Beautiful DnD
 > A simple issue tracker test project
 
 [![Netlify][netlify-img]][netlify-url]
@@ -7,7 +7,7 @@
 
 <!-- Badges to Add: Netlify build, twitter, license? -->
 
-_Featuring drag and drop capabilities, this issue tracker provides the user with a simple way to view and organize code issues._
+_Featuring drag and drop capabilities, DropTrak provides the user with a simple way to view and organize code issues._
 
 <p align="center">
   <img src="src/assets/issue-board.png" alt="Issue Board UI" width="700">
@@ -17,7 +17,7 @@ _Featuring drag and drop capabilities, this issue tracker provides the user with
 
 ## Features
 
-_Users can have fun moving their issues and tasks around. This app features:_
+_Users can have fun moving their issues and tasks around. DropTrak features:_
 - Ability to drag columns into a new order
 - Ability to move tasks to different columns
 - Ability to re-order tasks in a column
@@ -79,7 +79,7 @@ Windows 10 - Narrator
 
 ## Deployment
 
-This project is hosted on Netlify. To deploy your own copy, you will first need to set up a Netlify account.
+DropTrak is hosted on Netlify. To deploy your own copy, you will first need to set up a Netlify account.
 
 Before deploying to Netlify you need to create a build:
 
