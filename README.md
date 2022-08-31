@@ -103,6 +103,6 @@ For a basic deploy, you can simply drag and drop the build folder onto your Netl
 [github-commit]: https://img.shields.io/github/last-commit/lisawagner/beautiful-dnd-issue-tracker?logo=github&style=flat-square
 
 [netlify-img]: https://img.shields.io/netlify/b8d747d5-9d63-430b-9a36-989501605cae?style=flat-square
-[netlify-url]: https://droptrak-issue-traker.netlify.app/
+[netlify-url]: https://droptrak-issue-tracker.netlify.app/
 
 [tutorial-url]: https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd
